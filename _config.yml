@@ -202,6 +202,8 @@ jekyll-archives:
     tag: '/blog/tag/:name/'
     category: '/blog/category/:name/'
 
+display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will be dispalyed on the front page of your blog
+
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
@@ -237,10 +239,8 @@ jekyll-archives:
 # Responsive WebP Images
 # -----------------------------------------------------------------------------
 
-enable_responsive_images: true # enables responsive images for your site (recomended, see https://github.com/alshedivat/al-folio/issues/537)
-
 imagemagick:
-  enabled: true # make it 'false' if not using responsive images
+  enabled: true # enables responsive images for your site (recomended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
     - 480
     - 800
