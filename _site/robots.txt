@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://josemanuel22.github.io/sitemap.xml
