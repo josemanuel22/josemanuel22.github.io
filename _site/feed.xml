@@ -1,2 +1,145 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-01-26T22:59:00+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">José Manuel de Frutos website</title><subtitle>Mathematician and Computer Scientist, Software Engineer at Devo.
-</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-02-24T21:47:11+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">José Manuel de Frutos website</title><subtitle>Mathematician and Computer Scientist, Software Engineer at Devo.
+</subtitle><entry><title type="html">Automatic Preconditioning by Limited Memory Quasi-Newton Updating</title><link href="http://localhost:4000/blog/2023/automatic_preconditioning_lm_q-Newton_Upd/" rel="alternate" type="text/html" title="Automatic Preconditioning by Limited Memory Quasi-Newton Updating" /><published>2023-01-27T00:00:00+01:00</published><updated>2023-01-27T00:00:00+01:00</updated><id>http://localhost:4000/blog/2023/automatic_preconditioning_lm_q-Newton_Upd</id><content type="html" xml:base="http://localhost:4000/blog/2023/automatic_preconditioning_lm_q-Newton_Upd/"><![CDATA[<h2 id="conjugate-gradient-cg">Conjugate Gradient (CG)</h2>
+
+<p>Suppose we have some quadratic function,
+\begin{equation}
+f(x) = \frac{1}{2}x^{T}Ax-b^{T}x+c,
+\end{equation}
+for \(x\in \mathbb{R}^{n}\) with \(A\in\mathbb{R}^{n\times n}\) and \(b,c\in \mathbb{R}^{n}\).</p>
+
+<ul>
+  <li>
+    <p>The gradient of \(f\) will be, \(\nabla f(x) = Ax - b\). Minimizing the previous convex problem is equivalent to solve \(Ax = b\).</p>
+  </li>
+  <li>
+    <p>\(-\nabla f\) is the vector pointing the direction of steepest descent. We start with a initial guess \(x_0\) and we compute \(-\nabla f(x_{0})\), then we move in that direction by a step size \(\alpha\).</p>
+  </li>
+  <li>
+    <p>We are interested in finding the best \(\alpha\). This is, we are want to find the \(\alpha\) such that it brings us to the minimum of \(f\) constrainted to the direction \(d_{0}=-\nabla f(x_{0})\).</p>
+  </li>
+  <li>
+    <p>Computing \(\alpha\) is equivalent to minimizing the function \(g(\alpha) = f(x_{0}+ \alpha d_{0})\). The minimum of this function occurs when \(g'(\alpha)=0\). So we get that \(\alpha\) is,
+\begin{equation}
+\alpha = - \dfrac{d_{i}^{T}(Ax_{x_{i}} + b)}{d_{i}^{T}Ad_{i}}.
+\end{equation}</p>
+  </li>
+  <li>
+    <p>The second point in our iterative algorithm will be, \(x_{1}  = x_{0} - \alpha \nabla f(x_{0})\).</p>
+  </li>
+  <li>
+    <p>So we find a new direction \(d_1\) to move that is conjugate (w.r. \(A\)) to the previous one \(d_0\). So \(d_{1} = -\nabla f(x_1) + \beta_{0}d_{0}\). We can derive \(\beta_{0}\) from conjugacy, \(d_{1}^{T}Ad_{0}=0\).
+\begin{equation}
+\beta_{0}= \frac{\nabla f(x_{1})^{T}Ad_{0}}{d_{0}^{T}Ad_{0}}
+\end{equation}
+Iterating this process will keep giving us new conjugate directions.</p>
+  </li>
+</ul>
+
+<h2 id="preconditioned-conjugate-gradient-method">Preconditioned conjugate gradient method</h2>
+
+<p>The convergence analysis shows that convergence speed is fast when the condition number of \(A\) is close to \(1\). We can accelerate the convergence rate by replacing the system \(Ax=b\) by the preconditioned system,
+\begin{equation}
+M^{-1}Ax = M^{-1}b.
+\end{equation}</p>
+
+<p>The symmetric positive definite matrix \(M\) must be chosen s.t. the new system is solved with less computational work than the original one. That means that \(M^{-1}A\) has a more ‘favourable’ conditional number than \(A\).</p>
+
+<h2 id="hessian-free-newton-method">Hessian-Free Newton Method</h2>
+
+<p>We now have all the prerequisite background to understand the Hessian-free optimization method. The general idea behind the algorithm is as follows:</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="n">be</span> <span class="n">our</span> <span class="n">initial</span> <span class="n">guess</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">Stoping</span> <span class="n">test</span> <span class="n">not</span> <span class="n">satisfied</span><span class="p">)</span>
+        <span class="n">At</span> <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="n">compute</span> <span class="err">∇</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="n">and</span> <span class="n">H</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="n">and</span> <span class="n">consider</span> <span class="n">taylor</span> <span class="n">expansion</span> <span class="n">of</span> <span class="n">f</span><span class="o">:</span>
+            <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span> <span class="err">Δ</span><span class="n">x</span><span class="p">)</span> <span class="err">≈</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="err">∇</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="err">ᵀ</span> <span class="err">Δ</span><span class="n">x</span> <span class="o">+</span> <span class="err">Δ</span><span class="n">x</span><span class="err">ᵀ</span> <span class="n">H</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="err">Δ</span><span class="n">x</span><span class="p">.</span>
+        <span class="n">Compute</span> <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="n">with</span> <span class="n">C</span><span class="p">.</span><span class="n">G</span><span class="p">.</span> <span class="k">for</span> <span class="n">quadratic</span> <span class="n">functions</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Taylor</span> <span class="n">expansion</span><span class="p">.</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="automatic-preconditioning-by-limited-memory-quasi-newton-updating">Automatic Preconditioning by limited Memory Quasi-Newton Updating</h2>
+
+<p>We wish to accelerate the C.G. iteration used in Hessian-free Newton methods for nonlinear optimization.</p>
+
+<h3 id="general-problem">General problem</h3>
+
+<p>We want to solve the following problem,</p>
+
+<p>\begin{equation}
+A_{k}x = b_{k},\quad k=1,…,t,
+\end{equation}</p>
+
+<p>where \(A_{k}\) is the Hessian of the objective function at the current iterate. \(A_{k}\) vary slowly, and \(b_{k}\) are arbitrary.</p>
+
+<p>We are also interested in solving finite element problems, so a sequence of linear systems,
+\begin{equation}
+Ax = b_{i}, \quad i=1, …, t.
+\end{equation}
+Both cases the coefficient matrices are symmetric and positive define.</p>
+
+<h3 id="limited-memory-quasi-newton-algorithm">Limited memory quasi-Newton algorithm</h3>
+
+<p>We deal with the large scale unconstrained optimization problem,
+\begin{equation}
+\min{f(x)},
+\end{equation}
+where \(f\) is a \(C^{2}\) of \(n\) variables.</p>
+
+<p>Among the iterative methods for large scale unconstrained optimization,
+when the Hessian matrix is possibly dense, limited memory quasi-Newton
+methods are often the methods of choice.</p>
+
+<p>They generate a sequence \({x_k}\), according to the following scheme:
+\begin{equation}
+x_{k+1} = x_{k} + \alpha p_{k}, \quad k = 0, …
+\end{equation}
+with \(p_{k} = -H_{k}\nabla f(x)\), where \(H_{k}\) is an approximation of the inverse of the Hessian matrix and \(\alpha_k\) is a steplength.</p>
+
+<ul>
+  <li>
+    <p>Instead of computing \(H_{k}\) at each iteration \(k\), these methods update  \(H_{k}\) in a simple manner, in order to obtain the new approximation \(H_{k+1}\) to be used in the next iteration.</p>
+  </li>
+  <li>
+    <p>Moreover, instead of storing full dense \(n \times n\) approximations, they only save a few vectors of length
+\(n\), which allow to represent the approximations implicitly.</p>
+  </li>
+  <li>
+    <p>L-BFGS method is usually considered very efficient. Well suited for large scale problems because
+the amount of storage is limited and controlled by the user.</p>
+  </li>
+  <li>
+    <p>This method is based on the construction of the approximation of the inverse of the Hessian matrix, by exploiting curvature information gained only from the most recent iterations.</p>
+  </li>
+</ul>
+
+<p>So we have the following algorithm:</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>    <span class="n">Solve</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;-</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="n">x</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">with</span> <span class="n">unpreconditioned</span> <span class="n">CG</span><span class="o">-</span><span class="n">method</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="p">...,</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Compute</span><span class="o">/</span><span class="n">store</span><span class="o">:</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>  <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>  <span class="n">i</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">...,</span> <span class="n">l</span><span class="p">[</span><span class="n">m</span><span class="p">];</span>
+        <span class="n">Define</span> <span class="n">BFGS</span> <span class="n">matrix</span> <span class="n">H</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">using</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="p">(</span><span class="n">quasi</span><span class="o">-</span><span class="n">Newton</span> <span class="n">preconditioner</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;-</span> <span class="n">Use</span> <span class="n">H</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="n">preconditioned</span> <span class="n">CG</span><span class="o">-</span><span class="n">method</span> <span class="n">to</span> <span class="n">solve</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="n">x</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>The parameter \(m\) determines the amount of memory in the preconditioner.</li>
+  <li>Two strategies to select  the \(m\) vectors: 1. Select the last \(m\) vector generated during C.G. iteration. 2. Take a uniform sample of them.</li>
+  <li>We don’t need to compute the Hessian, we need to compute $H(m)v$, for any vector \(v\). Can be done by finite diferences (approximation).</li>
+</ul>
+
+<h2 id="results">Results</h2>
+<ul>
+  <li>Test the preconditioned-method in non linear optimization problems and in linear systems arising in finite element models.</li>
+  <li>Non linear optimization problems, there is a substantial reduction in the number of C.G. iterations, when \(m=8\). For beyond \(m=10\) most results are indentical to \(m=8\).</li>
+  <li>For tight tolerance, the benefit can be modest. But for relaxed tolerance the saving number of C.G. iterations are important.</li>
+  <li>With Finite element Matrices, there is also a reduction in the number of C.G. iterations. No reduction of CPU time because matrices are very sparce.</li>
+  <li>Comparing sampling strategies: In general a uniform sampling strategy perform better than saving the last \(m\) pairs.</li>
+</ul>]]></content><author><name></name></author><category term="sample-posts" /><category term="optimization," /><category term="numerical-methods," /><category term="gradient-descent," /><category term="preconditioning" /><summary type="html"><![CDATA[Summary and main concepts of the paper]]></summary></entry></feed>
