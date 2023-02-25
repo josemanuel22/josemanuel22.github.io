@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-02-25T14:54:41+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">José Manuel de Frutos website</title><subtitle>Mathematician and Computer Scientist, Software Engineer at Devo.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-02-25T20:15:46+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">José Manuel de Frutos website</title><subtitle>Mathematician and Computer Scientist, Software Engineer at Devo.
 </subtitle><entry><title type="html">Automatic Preconditioning by Limited Memory Quasi-Newton Updating</title><link href="http://localhost:4000/blog/2023/automatic_preconditioning_lm_q-Newton_Upd/" rel="alternate" type="text/html" title="Automatic Preconditioning by Limited Memory Quasi-Newton Updating" /><published>2023-01-27T00:00:00+01:00</published><updated>2023-01-27T00:00:00+01:00</updated><id>http://localhost:4000/blog/2023/automatic_preconditioning_lm_q-Newton_Upd</id><content type="html" xml:base="http://localhost:4000/blog/2023/automatic_preconditioning_lm_q-Newton_Upd/"><![CDATA[<h2 id="conjugate-gradient-cg">Conjugate Gradient (CG)</h2>
 
 <p>Suppose we have some quadratic function,
@@ -142,4 +142,132 @@ the amount of storage is limited and controlled by the user.</p>
   <li>For tight tolerance, the benefit can be modest. But for relaxed tolerance the saving number of C.G. iterations are important.</li>
   <li>With Finite element Matrices, there is also a reduction in the number of C.G. iterations, but there is no reduction of CPU time because matrices are very sparce.</li>
   <li>In general a uniform sampling strategy perform better than saving the last \(m\) pairs.</li>
-</ul>]]></content><author><name></name></author><category term="sample-posts" /><category term="optimization," /><category term="numerical-methods," /><category term="gradient-descent," /><category term="preconditioning" /><summary type="html"><![CDATA[Summary and main concepts of the paper]]></summary></entry></feed>
+</ul>
+
+<h2 id="references">References</h2>
+
+<p>This is a summary of the ideas developed in the famous work <a href="https://users.iems.northwestern.edu/~nocedal/PDFfiles/autoprecond.pdf">Updating, Q.N., 1999. Automatic Preconditioning by Limited Memory.</a></p>]]></content><author><name></name></author><category term="sample-posts" /><category term="optimization," /><category term="numerical-methods," /><category term="gradient-descent," /><category term="preconditioning" /><summary type="html"><![CDATA[Summary and main concepts of the paper Updating, Q.N., 1999. Automatic Preconditioning by Limited Memory.]]></summary></entry><entry><title type="html">Birth-Death process simulations and a Monte-Carlo dynamic algorithm (Gillespie)</title><link href="http://localhost:4000/blog/2022/Birth_Death_Process/" rel="alternate" type="text/html" title="Birth-Death process simulations and a Monte-Carlo dynamic algorithm (Gillespie)" /><published>2022-08-01T00:00:00+02:00</published><updated>2022-08-01T00:00:00+02:00</updated><id>http://localhost:4000/blog/2022/Birth_Death_Process</id><content type="html" xml:base="http://localhost:4000/blog/2022/Birth_Death_Process/"><![CDATA[<p>Repository <a href="https://github.com/josemanuel22/BirthDeathProcess.jl">BirthDeathProcess.jl</a>  process is a package in julia that implements a series of utilities to simulate the Birth-Death process, given by the differential equation \(n' = \beta - d\cdot n\).</p>
+
+<p>Two algorithms are implemented for the resolution of this simple ODE. In the first place, a classical numerical integration algorithm of the <a href="http://users.uoa.gr/~tsitourasc/RK54_new_v2.pdf">Runge-Kutta</a> type and secondly, the well-known <a href="https://www.sciencedirect.com/science/article/pii/0021999176900413?via%3Dihub">Gillespie</a> Monte-Carlo dynamic algorithm is implemented.</p>
+
+<h2 id="birth-death-process">Birth-Death Process</h2>
+
+<ul>
+  <li>
+    <p>Simple model of population dynamics called a birth-death processes. Population fluctuations (birth and death rates, \(\beta_{birth}\) and \(\beta_{death}\)) depend only on the population size, \(n\).</p>
+  </li>
+  <li>
+    <p>Let’s consider the following situation: protein synthesis. The rate at which the population increases depends only on the presence of the ingredients and is thus is fixed and a clearance rate (deaths) is proportional to the total population, \(n\).</p>
+  </li>
+  <li>
+    <p>So we have two possible events: births (or synthesis) and deaths (or decays):</p>
+  </li>
+</ul>
+
+<p>\begin{equation}
+\beta_{birth} = (constant),\quad
+\beta_{death}  = (k_0)*n.
+\end{equation}</p>
+
+<ul>
+  <li>
+    <p>\(\beta_{birth}\)  and \((k_0)\) are parameters of the model that would, in principle, be determined by experimental measurements. Both rates have units of [events/time]. From now on we will denote by \(d\) the parameter $k_0$.</p>
+  </li>
+  <li>Deterministically, the population size \(n\) can be described by the ordinary differential equation:
+\begin{equation}
+n’(t) = \beta - d \cdot n(t).
+\end{equation}</li>
+  <li>Solving this differential equation we get:
+\begin{equation}
+n(t) = c \cdot e^{-d\cdot t}+\beta/d,
+\end{equation}
+where \(c=n(0)-\beta/d\).</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<p>Simplest cases of pure birth process and pure death process.</p>
+
+<ul>
+  <li><em>Pure birth process</em>, the governing equation is, \(n(t)=b\cdot t + n(0)\). So any numerical solution that we obtain has to follow a linear pattern of \(\beta\) slope, for this case.</li>
+  <li><em>Pure death process</em>, the  governing equation is, \(n(t)=e^{-d\cdot t}+n(0)-1\). In this case the decreasing exponential pattern has to be observed.</li>
+</ul>
+
+<p>General equation, we obtain the asymptotic trend. With previous solution for the general problem: \(n=\beta/d\). The concavity will depend on the sign of \(C\).</p>
+
+<h2 id="stochastic-simulation-algorithm">Stochastic Simulation Algorithm</h2>
+
+<ul>
+  <li>
+    <p>Two possible events might occur and these might happen at different rates: birth and death.
+\begin{equation}
+\frac{trial_{death}}{trial_{birth}+trial_{death}}= \frac{d\cdot N}{\beta + d\cdot N}, \qquad \frac{trial_{birth}}{trial_{death}+trial_{birth}}= \frac{\beta}{\beta + d\cdot N}
+\end{equation}</p>
+  </li>
+  <li>
+    <p><em>Bernoulli Trial</em>. A event can either be a birth or a death. So we need to determine which event have actually occured. For this porpuse we choose a random number between \((0,1)\) and see if it is less than \(\frac{d\cdot N}{\beta + d\cdot N}\) or bigger. In each case we add or subtract an individual to the population (Monte-Carlo simulation).</p>
+  </li>
+  <li>
+    <p>For simplicity and to avoid divisions, we take a random number between \((0, d\cdot N+\beta)\), and we check that it is less than or greater than \(d\cdot N\).</p>
+  </li>
+  <li>
+    <p>Events in birth-death processes do not occur at regular time intervals. We can only say that the odds of an event occurring within any small time interval \(\Delta t\) is equal to \(a_{0} \Delta t\), where \(a_0\) is the mean rate of event occurrences. A sequence of random wait times is an example of what is called a “Poisson Process.”</p>
+  </li>
+  <li>
+    <p>Wait-times between sequential events follow an exponential distribution where the probability of the next event occurring after a duration \(\tau\) (give-or-take \(\Delta t\)) is given by:</p>
+  </li>
+</ul>
+
+<p>\begin{equation}
+P(\tau) = a_{0} \cdot e^{-a_0 \cdot \tau}
+\end{equation}</p>
+
+<ul>
+  <li>By <em>superposition property</em> we get that \(\tau = - \frac{\log{r}}{\beta + d\cdot x}\). Where \(r\) is a random number between \((0,1)\).<br /><br /></li>
+</ul>
+
+<h2 id="results">Results</h2>
+
+<ul>
+  <li>We show different simulations (blue points) for different values of birth-rate and death-rate vs theoretical solution (red line). Blue line is the mean square approximation.</li>
+</ul>
+
+<p><img src="/assets/img/bithdeathproject/1_001_10.png" alt="hdsfjl" /></p>
+
+<p><img src="/assets/img/bithdeathproject/1_01_10.png" alt="hdsfjl" /></p>
+
+<p><img src="/assets/img/bithdeathproject/1_01_1_2.png" alt="hdsfjl" /></p>
+
+<p><img src="/assets/img/bithdeathproject/1_01_1_numerical.png" alt="hdsfjl" /></p>
+
+<p><img src="/assets/img/bithdeathproject/1_02_10.png" alt="hdsfjl" /></p>
+
+<p><img src="/assets/img/bithdeathproject/1_01_1.png" alt="hdsfjl" /></p>
+
+<p><img src="/assets/img/bithdeathproject/1_01_10_2.png" alt="hdsfjl" /></p>
+
+<p><img src="/assets/img/bithdeathproject/1_01_20.png" alt="hdsfjl" /></p>
+
+<p><img src="/assets/img/bithdeathproject/1_05_1.png" alt="hdsfjl" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>Multiple simulations with same parameters vs theoretical solution (red bold line).</li>
+</ul>
+
+<p><img src="/assets/img/bithdeathproject/1_01_1_multiple.png" alt="hdsfjl" /></p>
+
+<h2 id="installation">Installation</h2>
+
+<p>To install BirthDeathProcess, simply use Julia’s package manager. The module is not registered so you need to clone the repository and follow the following steps:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>julia&gt; push!(LOAD_PATH,pwd()) # You are in the BirthDeathProcess Repository
+julia&gt; using BirthDeathProcess
+</code></pre></div></div>
+
+<p>To reproduce the enviroment for compiling the repository:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(@v1.6) pkg&gt;  activate pathToRepository/BirthDeathProcess
+</code></pre></div></div>
+<h2 id="presentation">Presentation</h2>
+
+<p>In the presentation folder, there is a beamer with a short presentation on the birth-death process and the implemented code.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="Monte-Carlo," /><category term="numerical-methods," /><category term="simulation," /><category term="julia," /><category term="Gillespie" /><summary type="html"><![CDATA[Development of a dynamic montecarlo algorithm for the process of Birth-Death.]]></summary></entry></feed>

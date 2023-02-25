@@ -2,7 +2,7 @@
 layout: post
 title: Automatic Preconditioning by Limited Memory Quasi-Newton Updating
 date:   2023-01-27
-description: Summary and main concepts of the paper Updating, Q.N., 1999. Automatic Preconditioning by Limited Memory.
+description: Summary and main concepts of the paper
 tags: optimization, numerical-methods, gradient-descent, preconditioning
 categories: sample-posts
 ---
@@ -125,4 +125,4 @@ So we have the following algorithm:
 
 ## References
 
-This is a summary of the ideas developed in the famous work [Updating, Q.N., 1999. Automatic Preconditioning by Limited Memory.](https://users.iems.northwestern.edu/~nocedal/PDFfiles/autoprecond.pdf)
+This is a summary of the ideas developed in the famous work of [Updating, Q.N., 1999. Automatic Preconditioning by Limited Memory.](https://users.iems.northwestern.edu/~nocedal/PDFfiles/autoprecond.pdf)
