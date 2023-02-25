@@ -121,5 +121,5 @@ So we have the following algorithm:
   - In non linear optimization problems, there is a substantial reduction in the number of C.G. iterations, when $$m=8$$. For beyond $$m=10$$ most results are indentical to $$m=8$$.
   - For tight tolerance, the benefit can be modest. But for relaxed tolerance the saving number of C.G. iterations are important. 
   - With Finite element Matrices, there is also a reduction in the number of C.G. iterations, but there is no reduction of CPU time because matrices are very sparce.
-  -  In general a uniform sampling strategy perform better than saving the last $$m$$ pairs.
+  - Comparing sampling strategies: In general a uniform sampling strategy perform better than saving the last $$m$$ pairs.
 

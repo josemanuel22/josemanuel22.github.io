@@ -5,6 +5,8 @@ date:   2023-01-27
 description: Summary and main concepts of the paper
 tags: optimization, numerical-methods, gradient-descent, preconditioning
 categories: sample-posts
+header-includes:
+  - \usepackage{algorithm2e}
 ---
 
 ## Conjugate Gradient (CG)
@@ -117,9 +119,9 @@ So we have the following algorithm:
   - We don't need to compute the Hessian, we need to compute $H(m)v$, for any vector $$v$$. Can be done by finite diferences (approximation).
 
 ## Results
-  We test the preconditioned-method in non linear optimization problems and in linear systems arising in finite element models.
-  - In non linear optimization problems, there is a substantial reduction in the number of C.G. iterations, when $$m=8$$. For beyond $$m=10$$ most results are indentical to $$m=8$$.
+  - Test the preconditioned-method in non linear optimization problems and in linear systems arising in finite element models.
+  - Non linear optimization problems, there is a substantial reduction in the number of C.G. iterations, when $$m=8$$. For beyond $$m=10$$ most results are indentical to $$m=8$$.
   - For tight tolerance, the benefit can be modest. But for relaxed tolerance the saving number of C.G. iterations are important. 
-  - With Finite element Matrices, there is also a reduction in the number of C.G. iterations, but there is no reduction of CPU time because matrices are very sparce.
-  -  In general a uniform sampling strategy perform better than saving the last $$m$$ pairs.
+  - With Finite element Matrices, there is also a reduction in the number of C.G. iterations. No reduction of CPU time because matrices are very sparce.
+  - Comparing sampling strategies: In general a uniform sampling strategy perform better than saving the last $$m$$ pairs.
 
