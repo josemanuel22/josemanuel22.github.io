@@ -3,7 +3,7 @@ layout: post
 title: Formulas of Brion, Lawrence and Varchenko on rational generating functions for cones.
 date:   2023-06-01
 description: Summary and main concepts of the paper, Formulas of Brion, Lawrence, and Varchenko on rational generating functions for cones, by Beck, M., Haase, C., & Sottile, F. (2009).
-tags: Combinatorics, discrete geometry
+tags: Combinatorics, Discrete-geometry
 categories: sample-posts
 ---
 We strive to present two remarkable discoveries in discrete geometry: the formulas established by Michel Brion [7], James Lawrence [15], and Alexander N. Varchenko [16]. Initially, these formulas may appear incredulous, and even after dedicating considerable time to studying them, they continue to evoke a sense of intrigue and fascination.
@@ -43,15 +43,47 @@ The generating function for such a cone is a rational function. According to Bri
 
 \end{equation}
 
-
 ## James Lawrence and to Alexander Varchenko Formula
 
 Another theorem, independently discovered by James Lawrence and Alexander Varchenko, demonstrates a similar collapsing behavior of generating functions associated with cones.
 
-The Lawrence–Varchenko For- mula says that adding the rational functions of these cones with appropriate signs gives the polynomial `P(x)` encoding the integer points in `P`:
+The Lawrence–Varchenko Formula says that adding the rational functions of these cones with appropriate signs gives the polynomial `P(x)` encoding the integer points in `P`:
 
 ## Proofs
 
+Brion's original proof of his formula [6] involved the application of the Lefschetz-Riemann-Roch theorem in equivariant K-theory [3] to a singular toric variety. However, there is good news! The remarkable formulas established by Brion and Lawrence-Varchenko now have accessible proofs that rely on counting techniques. This development makes understanding and verifying these formulas much simpler.
+
+The proof can be divided in four steps,
+
+### Proving that the apex of the cone do not need to be rational
+
+In the first part we need to prove that we do not require that the apex $$v$$ of the cone to be rational, but only that the generators $$w_i$$ of the cone be linearly independent vectors in $$\mathbb{Z}^{d}$$.
+
+A simple rational $$K$$ cone in $$\mathbb{R}^{d}$$ has the form,
+
+\begin{equation}
+K = v + \sum_{i=1}^{d}\lambda_{i}w_{i} \quad |\quad \lambda_{i}\in  \mathbb{R_{\geq 0}} = v + \sum_{i=1}^{d} \mathbb{R_{\geq 0}}w_{i},
+\end{equation}
+where $$w_{1}, \ldots, w_{d}\in \mathbb{Z}^{d}$$ are l.i.
+
+The idea to prove this is just to tiling a simple cone by translates of its fundamental parallelepiped $P$. By summing up the generating functions of all the translates of $P$ we get the generating function of the cone $K$.
+
+###  Decomposing the cone into simplicial cones
+
+$$K$$ is strictly convex, then it may be decomposed into simple cones having pairwise disjoint interiors, each with apex $$v$$ and with the generators $$w_{i}$$ of $$K$$. We would like to add the generating functions for each cone $$K_i$$ to obtain the generating function for $$K$$. However, some of the cones may have lattice points in common, so we needed to treat the subsequent overcounting.
+
+An elegant approach to address this is by circumventing the issue of overcounting through the process of translating all the cones. There exists a short vector $$s \in \mathbb{R}^{d}$$ such that and no facet of any cone contains any integer points. This gives the disjoint irrational decomposition
+
+### Connecting Formal Laurent Series with Rational Functions
+
+While the Lawrence-Varchenko formula relies on simple cones and Brion's formula involves strictly convex cones, we can employ even more general cones in the proof of these formulas. For this we define a rational (closed) halfspace as the convex subset of $\mathbb{R}^{d}$$ defined by,
+\begin{equation}
+x\in \mathbb{R}^{d} \quad | \quad w\cdot x \geq b ,
+\end{equation}
+A (closed) cone $$K$$ is the interection of finitely many closed halfspaces whose boundary hyperplanes have some point in common. The apex of $$K$$ is the intersection of these boundary hyperplanes, which is an affine linear subspace. The generating function for the integer points in K is the formal Laurent series,
+\begin{equation}
+\end{equation}
+This formal series makes sense as a rational function only if $$K$$ is strictly convex, that is, if its apex is a single point.
 
 ## References
 
