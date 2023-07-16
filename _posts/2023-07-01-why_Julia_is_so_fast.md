@@ -3,7 +3,7 @@ layout: post
 title: Why Julia is so fast?
 date:   2023-07-01
 description: Summary and main concepts of the paper, Julia Dynamism and performance reconciled by design by Bezanson, Jeff, et al.
-tags: dynamic languages, just-in-time compilation, performance, programming languages, type inference
+tags: dynamic-languages, just-in-time compilation, performance, programming-languages, type-inference
 categories: sample-posts
 ---
 I have always wanted to understand what makes one programming language faster than another. The problem is that in order to know this, one must understand in detail how the specific programming language they want to study is implemented. This is often a complicated task, as there are millions of books that explain the basics of the syntax of a programming language, but there are hardly any books that explain the technical and theoretical details behind the design of a language. Generally, to acquire this knowledge, one must have spent a lot of time programming in that language, get to know the project from within, read thousands of blogs and questions and answers on Stack Overflow, etc.
