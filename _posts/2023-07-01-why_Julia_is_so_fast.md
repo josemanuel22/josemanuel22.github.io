@@ -25,7 +25,7 @@ Memory is managed by a stop-the-world, non-moving, markand-sweep garbage collect
 
 ## Method Specialization
 
-*Julia's compilation strategy relies on runtime type information*: Every time a method is called with a new tuple of argument types, the method is specialized to these specific types. These are the advantage of such a strategy:
+**Julia's compilation strategy relies on runtime type information**: Every time a method is called with a new tuple of argument types, the method is specialized to these specific types. These are the advantage of such a strategy:
 
 - Optimizing methods at invocation time in Julia provides the Just-In-Time (JIT) compiler with important information, such as the known **memory layout** of all arguments. This enables optimizations like unboxing and direct field access.
 
