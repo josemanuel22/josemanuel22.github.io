@@ -20,7 +20,7 @@ Julia is designed to generate efficient native code during runtime. The Julia co
 
 With the exception of the standard library which is pre-compiled, all Julia code executed by a running program is compiled on demand. The compiler is relatively simple: it is a method-based JIT without compilation tiers; once methods are compiled they are not changed as Julia does not support deoptimization with on-stack replacement.
 
-Memory is managed by a stop-the-world, non-moving, markand-sweep garbage collector [3,4]. The mark phase can be executed in parallel. The collector has a single old generation for objects that survive a number of cycles. It uses a [shadow](https://en.wikipedia.org/wiki/Shadow_stack) stack to record pointers in order to be precise.
+Memory is managed by a stop-the-world, non-moving, markand-sweep garbage collector [3,4]. The mark phase can be executed in parallel. The collector has a single old generation for objects that survive a number of cycles. It uses a [shadow stack](https://en.wikipedia.org/wiki/Shadow_stack) to record pointers in order to be precise.
 
 
 ## Method Specialization
