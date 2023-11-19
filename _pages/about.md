@@ -22,7 +22,7 @@ Put your address / P.O. box / other info right below your picture. You can also 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
 -->
 
-I am a Software Engineer working at Devo in the loxcope team. Previously, I worked at the European Southern Observatory as a Data engineer and at CERN Openlab Program.
+I am a Ph.D. student in Bayesian Filtering and Deep Learning Methods with a theoretical statistical perspective at Carlos III University of Madrid. Previously, I was a Software Engineer working at Devo in the loxcope team and I also worked at the European Southern Observatory as a Data engineer and at CERN Openlab Program.
 
 My interests verse on software engineering, databases (theory and practice) and scientific computing. My experience covers languages such as Python, Java, SQL, JavaScript ; and technologies such as Docker, ANTLR4, Kubernetes, Apache Spark, GIT or C.I. systems.
 
