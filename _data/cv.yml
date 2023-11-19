@@ -84,6 +84,17 @@
       year: 2016
       description:
           - Mathematics, Computer Science and Economy
+
+- title: Teaching
+  type: time_table
+  contents:
+    - title: Machine Learning II
+      year: 2023 -
+      institution: University Carlos III of Madrid, Madrid, Spain
+      description:
+        - Bachelor in Data Science Engineering (English)
+        - Plus tutoring foreign students
+  
 #- title: Open Source Projects
 #  type: time_table
 #  contents:
