@@ -11,9 +11,19 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Phd Student in Machine Learning and Bayesian Filtering
+      institution: University Carlos III of Madrid, Madrid, Spain
+      year: 2023 -
+      description:
+        - Researcher DL Model Applied to filtering Methods
+        - title: Development of Bayesian filtering methods using Deep Learning methods
+          contents:
+            - ParticleFilter, Bayesian filtering, deep learning, generative models
+            - Python (pyTorch, Jax), Julia (Flux)
+            - Papers publications (AIStats2024)
     - title: Full Stack Software Engineer
       institution: Devo inc
-      year: 2020 -
+      year: 2020 - 2023
       description:
         - R&D Software Engineer. Interactive searches team for logs management.
         - Performed and improve handling of queries
@@ -68,7 +78,7 @@
         - Foundations of mathematics and Computer Science
         - PDEs, Numerical Methods, Statisitics, AI-ML, Algorithm analysis
         - C/C++, Java, Python.
-        - <a href="/assets/pdf/TFG_MAT.pdf" target="_blank"> Bachelor Thesis </a> geometric measure theory
+        - <a href="/assets/pdf/TFG_MAT.pdf" target="_blank"> Bachelor thesis </a> geometric measure theory
     - title: Internacional exchange program
       institution: École Polytechnique, Paris, France
       year: 2016

@@ -3,17 +3,27 @@
   contents:
     - name: Full Name
       value: José Manuel de Frutos
-    - name: Date of Birth
-      value: 2nd August 1994
+    #- name: Date of Birth
+    #  value: 2nd August 1994
     - name: Languages
       value: Spanish, French, English
 
 - title: Experience
   type: time_table
   contents:
+    - title: Phd Student in Machine Learning and Bayesian Filtering
+      institution: University Carlos III of Madrid, Madrid, Spain
+      year: 2023 -
+      description:
+        - Researcher DL Model Applied to filtering Methods
+        - title: Development of Bayesian filtering methods using Deep Learning methods
+          contents:
+            - ParticleFilter, Bayesian filtering, deep learning, generative models
+            - Python (pyTorch, Jax), Julia (Flux)
+            - Papers publications (AIStats2024)
     - title: Full Stack Software Engineer
       institution: Devo inc
-      year: 2020 -
+      year: 2020 - 2023
       description:
         - R&D Software Engineer. Interactive searches team for logs management.
         - Performed and improve handling of queries
@@ -60,7 +70,7 @@
       description:
         - Stochastic processes and Advanced statistics
         - Numerical methods and Advanced PDEs
-        -  <a href="https://..." target="_blank"> Master's thesis on the mathematical foundations of image segmentation.</a>
+        -  <a href="/assets/pdf/TFM2020_07_07jmdefrutos.pdf" target="_blank">Master's thesis</a> on the mathematical foundations of image segmentation
     - title: Double Bachelor in Mathematics and Computer Science
       institution: University Autónoma of Madrid, Madrid, Spain
       year: 2018
@@ -68,6 +78,7 @@
         - Foundations of mathematics and Computer Science
         - PDEs, Numerical Methods, Statisitics, AI-ML, Algorithm analysis
         - C/C++, Java, Python.
+        - <a href="/assets/pdf/TFG_MAT.pdf" target="_blank"> Bachelor thesis </a> geometric measure theory
     - title: Internacional exchange program
       institution: École Polytechnique, Paris, France
       year: 2016
