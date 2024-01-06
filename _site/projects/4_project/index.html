@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>curiosity | José Manuel de Frutos website</title>
+    <title>Julia DeepAR | José Manuel de Frutos website</title>
     <meta name="author" content="José Manuel  de Frutos Porras" />
-    <meta name="description" content="Some book recommendations, papers that I especially liked and many other things!" />
+    <meta name="description" content="DeepAR Probabilistic Forecasting with Autoregressive Recurrent Networks" />
 
 
     <!-- Bootstrap & MDB -->
@@ -29,7 +29,7 @@
     <!-- Styles -->
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/curiosity/">
+    <link rel="canonical" href="http://localhost:4000/projects/4_project/">
     
     <!-- Dark Mode -->
     
@@ -78,8 +78,8 @@
               <li class="nav-item ">
                 <a class="nav-link" href="/projects/">projects</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/curiosity/">curiosity<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/curiosity/">curiosity</a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/teaching/">teaching</a>
@@ -107,39 +107,105 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">curiosity</h1>
-            <p class="post-description">Some book recommendations, papers that I especially liked and many other things!</p>
+            <h1 class="post-title">Julia DeepAR</h1>
+            <p class="post-description">DeepAR Probabilistic Forecasting with Autoregressive Recurrent Networks</p>
           </header>
 
           <article>
-            <h2 id="data-representation-uncertain-data-and-queries">Data Representation, uncertain data and queries</h2>
+            <p><a href="https://github.com/josemanuel22/DeepAR.jl" target="_blank" rel="noopener noreferrer">DeepAR.jl</a> is a Julia module designed for probabilistic forecasting using autoregressive recurrent networks, based on the concept introduced in the paper <a href="https://arxiv.org/pdf/1704.04110.pdf" target="_blank" rel="noopener noreferrer">DeepAR: Probabilistic Forecasting with Autoregressive Recurrent Networks</a>.</p>
 
-<p>Some time ago I found this great <a href="https://arxiv.org/pdf/2003.12590.pdf" target="_blank" rel="noopener noreferrer">survey</a> that summarizes the state of the art of data representation. Regarding this survey, I was able to find two other very interesting related works, <a href="https://arxiv.org/pdf/2103.06766.pdf" target="_blank" rel="noopener noreferrer">Stable Tuple Embeddings for Dynamic Databases</a>, <a href="https://dl.acm.org/doi/pdf/10.1145/3318464.3389742" target="_blank" rel="noopener noreferrer">Creating Embeddings of Heterogeneous Relational Datasets for Data Integration Tasks</a>. I hope one day to have time to add a blog entry summarizing these three works ;)</p>
+<h2 id="installation">Installation</h2>
+<p>Currently, DeepAR is not registered in Julia’s General registry. To install, clone the repository directly.</p>
 
-<h2 id="distributed-systems">Distributed systems</h2>
+<h2 id="features">Features</h2>
+<p>DeepAR allows the training and use of deep learning models for time series forecasting. Key features include:</p>
 
-<p>Regarding distributed systems, I recommend the classic <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener noreferrer">bitcoin white paper</a>. It is beautiful to discover how economics, technology, mathematics and even philosophy can be combined in a couple of pages.</p>
+<ul>
+  <li>Time series forecasting using autoregressive models.</li>
+  <li>Training and prediction with custom hyperparameters.</li>
+</ul>
 
-<p>I have also read this classic paper, <a href="https://pmg.csail.mit.edu/papers/vr-revisited.pdf" target="_blank" rel="noopener noreferrer">Viewstamped Replication Revisited</a>. It is always uselful to remember how difficult the world is when we live in a no-ideal, distributed world where things can go very wrong.</p>
+<h2 id="usage">Usage</h2>
 
-<p>Finally, <a href="https://www.youtube.com/@kleppmann" target="_blank" rel="noopener noreferrer">Martin Kleppmann’s YouTube channel</a> seems to me a great entry point to enter this world. If you like his channel, don’t forget to take a look at his book, <a href="https://amzn.to/3HmB69R" target="_blank" rel="noopener noreferrer">Designing Data-Intensive Applications</a>.</p>
+<h3 id="importing-the-module">Importing the Module</h3>
+<p>To use DeepAR, first import the module along with required dependencies:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using DeepAR
+</code></pre></div></div>
 
-<h2 id="artificial-intelligence">Artificial intelligence</h2>
+<h3 id="hyperparameters">Hyperparameters</h3>
+<p>Define the hyperparameters for the DeepAR model using <code class="language-plaintext highlighter-rouge">DeepARParams</code>:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">η::Float64</code>: Learning rate for model training. Default is <code class="language-plaintext highlighter-rouge">1e-2</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">n_mean::Int</code>: Number of samples used for computing the predictive mean. Default is <code class="language-plaintext highlighter-rouge">100</code>.</li>
+</ul>
 
-<p>I have been able to read quite a few papers on artificial intelligence. Of all the artificial intelligence ideas, the one that attracts me the most is the graph neural network (GNN), the following surveys summarize the state of the art very well, <a href="https://arxiv.org/pdf/1901.00596.pdf" target="_blank" rel="noopener noreferrer">A comprehensive survey on graph neural network</a>, <a href="https://arxiv.org/pdf/1810.00826.pdf" target="_blank" rel="noopener noreferrer">HOW POWERFUL ARE GRAPH NEURAL NETWORKS?</a>.</p>
+<h3 id="training">Training</h3>
+<p>Train a DeepAR model with the <code class="language-plaintext highlighter-rouge">train_DeepAR</code> function:</p>
+<ul>
+  <li>Parameters:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">model</code>: The DeepAR model.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">loaderXtrain</code>: DataLoader with input sequences.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">loaderYtrain</code>: DataLoader with target sequences.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">hparams</code>: <code class="language-plaintext highlighter-rouge">DeepARParams</code> instance.</li>
+    </ul>
+  </li>
+  <li>Returns a vector of loss values.</li>
+</ul>
 
-<h2 id="other-stuff">Other stuff</h2>
+<h3 id="forecasting">Forecasting</h3>
+<p>Generate forecasts using the <code class="language-plaintext highlighter-rouge">forecasting_DeepAR</code> function:</p>
+<ul>
+  <li>Parameters:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">model</code>: Trained DeepAR model.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">ts</code>: Time series data.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">t₀</code>: Starting time step for forecasting.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">τ</code>: Number of time steps to forecast.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">n_samples</code>: Number of samples per forecast (default: 100).</li>
+    </ul>
+  </li>
+  <li>Returns a vector of forecasted values.</li>
+</ul>
 
-<p>If you are interested in computational group theory and in particular how to create constraints to break symmetry spaces, I strongly recommend this paper, which, although old, seemed sublime to me, <a href="https://d1wqtxts1xzle7.cloudfront.net/69402401/The_Complexity_of_Symmetry-Breaking_Form20210911-24530-iti492.pdf?1631382718=&amp;response-content-disposition=inline%3B+filename%3DThe_Complexity_of_Symmetry_Breaking_Form.pdf&amp;Expires=1674320932&amp;Signature=czQpTqc7~nDeQN5w4GYbW0dON2D43EPcJslQzMakLXu8HsblUXlw2MzDNzjzNPiVkrfwl0zLn7Qo8tyHde9NUOgMwj5UbCgxNCPLMcH5Z1Kc--cBqqDzec4C7pKFFcQwePK11TZS2wt9x74ZjlOJOqMlpN3EUbsT1VPLBHztTtdjRz3jaPWASrO6vt-dwW6-xX8pd3aOPJoQeV1tvFU3AhMR1rlBdkEE4ZEbcCpTWLQ6GUD1ai42oLkkH24Ad8Djj65lvXsSATdedDLuBfwHYFWZt3xqmdvV2fSPS0Yjv7a0LnuwVqOq4makiThA3aLDbb89zGD~ZUK7nHUlmOHBzA__&amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" target="_blank" rel="noopener noreferrer">The Complexity of Symmetry-Breaking Formulas</a></p>
+<h2 id="example">Example</h2>
 
-<p>For the rest, I am very fond of learning programming languages and how they work. Right now I’m with <a href="https://arxiv.org/pdf/1209.5145.pdf" target="_blank" rel="noopener noreferrer">Julia</a>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  using DeepAR
 
-<h2 id="books-i-read-during-my-free-time">Books I read during my free time</h2>
+  model = Chain(
+      RNN(1 =&gt; 10, relu), RNN(10 =&gt; 10, relu), Dense(10 =&gt; 16, relu), Dense(16 =&gt; 2, identity)
+  )
 
-<p>Obviously not everything is mathematics and computer science. If you want to laugh for a while I recommend the trilogy of the Hitchhiker’s Guide to the Galaxy!</p>
+  train_data = Float32.(randn(1, 1001))
+  deepAR_params = DeepARParams(; η=0.01, epochs=100, n_mean=100)
 
-<p>I like history and in particular the history of Spain. The first trip around the world is a magnificent story beautifully explained in this book by the great Jose Luis Comellas <a href="https://amzn.to/3GU0q5D" target="_blank" rel="noopener noreferrer">La Primera Vuelta Al Mundo</a>.</p>
+  loaderXtrain = DataLoader(train_data[1:end-1], batchsize=1000)
+  loaderYtrain = DataLoader(train_data[2:end], batchsize=1000)
 
+  # Train the model
+  loss = train_DeepAR(model, loaderXtrain, loaderYtrain, deepAR_params)
+</code></pre></div></div>
+
+<h2 id="contributing">Contributing</h2>
+<p>Contributions to the DeepAR module are welcome. Please submit issues and pull requests on the repository.</p>
+
+<h2 id="license">License</h2>
+<p>DeepAR is licensed under <a href="LICENSE">MIT License</a>. Please check the repository for more details.</p>
+
+<hr>
+
+<p>For more detailed information and updates, refer to the DeepAR GitHub repository.</p>
 
           </article>
 

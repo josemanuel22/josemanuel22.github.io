@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>curiosity | José Manuel de Frutos website</title>
+    <title>Julia MMD-GAN | José Manuel de Frutos website</title>
     <meta name="author" content="José Manuel  de Frutos Porras" />
-    <meta name="description" content="Some book recommendations, papers that I especially liked and many other things!" />
+    <meta name="description" content="Julia MMD GAN implementation" />
 
 
     <!-- Bootstrap & MDB -->
@@ -29,7 +29,7 @@
     <!-- Styles -->
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/curiosity/">
+    <link rel="canonical" href="http://localhost:4000/projects/5_project/">
     
     <!-- Dark Mode -->
     
@@ -78,8 +78,8 @@
               <li class="nav-item ">
                 <a class="nav-link" href="/projects/">projects</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/curiosity/">curiosity<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/curiosity/">curiosity</a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/teaching/">teaching</a>
@@ -107,39 +107,54 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">curiosity</h1>
-            <p class="post-description">Some book recommendations, papers that I especially liked and many other things!</p>
+            <h1 class="post-title">Julia MMD-GAN</h1>
+            <p class="post-description">Julia MMD GAN implementation</p>
           </header>
 
           <article>
-            <h2 id="data-representation-uncertain-data-and-queries">Data Representation, uncertain data and queries</h2>
+            <h2 id="overview">Overview</h2>
+<p><a href="https://github.com/josemanuel22/MMD_GAN.jl" target="_blank" rel="noopener noreferrer">MMD_GAN.jl</a> is a Julia module implementing a <a href="https://arxiv.org/pdf/1705.08584.pdf" target="_blank" rel="noopener noreferrer">Maximum Mean Discrepancy (MMD) Generative Adversarial Network</a>. This module provides functionalities to train GAN models using MMD for measuring the discrepancy between the generated and real data distributions. It is designed for easy experimentation with different hyperparameters and model architectures.</p>
 
-<p>Some time ago I found this great <a href="https://arxiv.org/pdf/2003.12590.pdf" target="_blank" rel="noopener noreferrer">survey</a> that summarizes the state of the art of data representation. Regarding this survey, I was able to find two other very interesting related works, <a href="https://arxiv.org/pdf/2103.06766.pdf" target="_blank" rel="noopener noreferrer">Stable Tuple Embeddings for Dynamic Databases</a>, <a href="https://dl.acm.org/doi/pdf/10.1145/3318464.3389742" target="_blank" rel="noopener noreferrer">Creating Embeddings of Heterogeneous Relational Datasets for Data Integration Tasks</a>. I hope one day to have time to add a blog entry summarizing these three works ;)</p>
+<h2 id="installation">Installation</h2>
+<p>To use MMD_GAN.jl, clone this repository into your local machine. Make sure you have Julia installed and set up on your system.</p>
 
-<h2 id="distributed-systems">Distributed systems</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:josemanuel22/MMD_GAN.jl.git
+</code></pre></div></div>
 
-<p>Regarding distributed systems, I recommend the classic <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener noreferrer">bitcoin white paper</a>. It is beautiful to discover how economics, technology, mathematics and even philosophy can be combined in a couple of pages.</p>
+<h2 id="usage">Usage</h2>
+<p>The module includes core functionalities to define hyperparameters, set up models, and train an MMD GAN. Key components include:</p>
 
-<p>I have also read this classic paper, <a href="https://pmg.csail.mit.edu/papers/vr-revisited.pdf" target="_blank" rel="noopener noreferrer">Viewstamped Replication Revisited</a>. It is always uselful to remember how difficult the world is when we live in a no-ideal, distributed world where things can go very wrong.</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">HyperParamsMMD</code>: A structure to define hyperparameters for the MMD GAN.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">train_mmd_gan</code>: A function to train the MMD GAN using specified encoder, decoder, and generator models with given hyperparameters.</li>
+</ul>
 
-<p>Finally, <a href="https://www.youtube.com/@kleppmann" target="_blank" rel="noopener noreferrer">Martin Kleppmann’s YouTube channel</a> seems to me a great entry point to enter this world. If you like his channel, don’t forget to take a look at his book, <a href="https://amzn.to/3HmB69R" target="_blank" rel="noopener noreferrer">Designing Data-Intensive Applications</a>.</p>
+<h3 id="example">Example</h3>
+<div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="n">MMD_GAN</span>
 
-<h2 id="artificial-intelligence">Artificial intelligence</h2>
+<span class="c"># Define your models (encoder, decoder, generator)</span>
+<span class="c"># enc = ...</span>
+<span class="c"># dec = ...</span>
+<span class="c"># gen = ...</span>
 
-<p>I have been able to read quite a few papers on artificial intelligence. Of all the artificial intelligence ideas, the one that attracts me the most is the graph neural network (GNN), the following surveys summarize the state of the art very well, <a href="https://arxiv.org/pdf/1901.00596.pdf" target="_blank" rel="noopener noreferrer">A comprehensive survey on graph neural network</a>, <a href="https://arxiv.org/pdf/1810.00826.pdf" target="_blank" rel="noopener noreferrer">HOW POWERFUL ARE GRAPH NEURAL NETWORKS?</a>.</p>
+<span class="c"># Define hyperparameters</span>
+<span class="n">hparams</span> <span class="o">=</span> <span class="n">HyperParamsMMD</span><span class="x">(</span>
+    <span class="n">target_model</span> <span class="o">=</span> <span class="n">Normal</span><span class="x">(</span><span class="mf">23.0f0</span><span class="x">,</span> <span class="mf">1.0f0</span><span class="x">),</span>
+    <span class="n">noise_model</span> <span class="o">=</span> <span class="n">Normal</span><span class="x">(</span><span class="mf">0.0f0</span><span class="x">,</span> <span class="mf">1.0f0</span><span class="x">),</span>
+    <span class="c"># Other hyperparameters...</span>
+<span class="x">)</span>
 
-<h2 id="other-stuff">Other stuff</h2>
+<span class="c"># Train the model</span>
+<span class="n">losses_gen</span><span class="x">,</span> <span class="n">losses_dscr</span> <span class="o">=</span> <span class="n">train_mmd_gan</span><span class="x">(</span><span class="n">enc</span><span class="x">,</span> <span class="n">dec</span><span class="x">,</span> <span class="n">gen</span><span class="x">,</span> <span class="n">hparams</span><span class="x">)</span>
+</code></pre></div></div>
 
-<p>If you are interested in computational group theory and in particular how to create constraints to break symmetry spaces, I strongly recommend this paper, which, although old, seemed sublime to me, <a href="https://d1wqtxts1xzle7.cloudfront.net/69402401/The_Complexity_of_Symmetry-Breaking_Form20210911-24530-iti492.pdf?1631382718=&amp;response-content-disposition=inline%3B+filename%3DThe_Complexity_of_Symmetry_Breaking_Form.pdf&amp;Expires=1674320932&amp;Signature=czQpTqc7~nDeQN5w4GYbW0dON2D43EPcJslQzMakLXu8HsblUXlw2MzDNzjzNPiVkrfwl0zLn7Qo8tyHde9NUOgMwj5UbCgxNCPLMcH5Z1Kc--cBqqDzec4C7pKFFcQwePK11TZS2wt9x74ZjlOJOqMlpN3EUbsT1VPLBHztTtdjRz3jaPWASrO6vt-dwW6-xX8pd3aOPJoQeV1tvFU3AhMR1rlBdkEE4ZEbcCpTWLQ6GUD1ai42oLkkH24Ad8Djj65lvXsSATdedDLuBfwHYFWZt3xqmdvV2fSPS0Yjv7a0LnuwVqOq4makiThA3aLDbb89zGD~ZUK7nHUlmOHBzA__&amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" target="_blank" rel="noopener noreferrer">The Complexity of Symmetry-Breaking Formulas</a></p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions to MMD_GAN.jl are welcome. Please read our <a href="CONTRIBUTING.md">contribution guidelines</a> for more details.</p>
 
-<p>For the rest, I am very fond of learning programming languages and how they work. Right now I’m with <a href="https://arxiv.org/pdf/1209.5145.pdf" target="_blank" rel="noopener noreferrer">Julia</a>.</p>
-
-<h2 id="books-i-read-during-my-free-time">Books I read during my free time</h2>
-
-<p>Obviously not everything is mathematics and computer science. If you want to laugh for a while I recommend the trilogy of the Hitchhiker’s Guide to the Galaxy!</p>
-
-<p>I like history and in particular the history of Spain. The first trip around the world is a magnificent story beautifully explained in this book by the great Jose Luis Comellas <a href="https://amzn.to/3GU0q5D" target="_blank" rel="noopener noreferrer">La Primera Vuelta Al Mundo</a>.</p>
-
+<h2 id="license">License</h2>
+<p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
 
           </article>
 
