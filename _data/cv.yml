@@ -92,8 +92,8 @@
       year: 2023 -
       institution: University Carlos III of Madrid, Madrid, Spain
       description:
-        - Bachelor in Data Science Engineering (English)
-        - Plus tutoring foreign students
+        - Bachelor in Data Science Engineering, Bachelor in Electrical Engineering (English)
+        - Tutoring foreign students
   
 #- title: Open Source Projects
 #  type: time_table
@@ -128,4 +128,4 @@
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Basketball, travel, read good books!
+    - <u>Hobbies:</u> Basketball, travel, reading good books!

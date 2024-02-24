@@ -2,8 +2,8 @@
 layout: page
 permalink: /publications/
 title: publications
-description: publications by categories in reversed chronological order.
-years:
+description: Publications by categories in reversed chronological order.
+years: [2024, 2018]
 nav: true
 nav_order: 2
 ---
@@ -17,7 +17,7 @@ nav_order: 2
 
 </div>
 
-## Master thesis and Bachelor thesis
+### Master thesis and Bachelor thesis
 
 When I was at the University, thanks to my professor, I discovered the wonderful world of the geometric measure theory and in particular its application to fractal geometry, [Final Thesis](/assets/pdf/TFG_MAT.pdf).
 

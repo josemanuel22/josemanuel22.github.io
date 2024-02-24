@@ -3,7 +3,7 @@ layout: page
 permalink: /curiosity/
 title: curiosity
 description: Some book recommendations, papers that I especially liked and many other things!
-nav: true
+nav: false
 nav_order: 4
 ---
 
