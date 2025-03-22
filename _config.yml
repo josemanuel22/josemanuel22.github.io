@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "José Manuel de Frutos / Site Title"
+title                    : "José Manuel de Frutos / Personal Webpage"
 title_separator          : "-"
 name                     : &name "José Manuel de Frutos"
 description              : &description "personal description"
@@ -29,7 +29,7 @@ author:
   location         : "Earth"
   employer         : "University Carlos III of Madrid"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "josemanuel.defrutos22@gmail.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
