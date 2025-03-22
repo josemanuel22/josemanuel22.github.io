@@ -1,20 +1,31 @@
 ---
-title: "Teaching experience 1"
+title: "Machine Learning II (2023 -)"
 collection: teaching
 type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
-date: 2014-01-01
-location: "City, Country"
+permalink: /teaching/2023-machine-learning-ii
+venue: "University Carlos III of Madrid, Spain"
+date: 2023-01-01
+location: "Madrid, Spain"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+**Course Overview**
 
-Heading 1
-======
+- Bachelor in Data Science (English)
+- Tutoring foreign students
 
-Heading 2
-======
+***PART 1: Nonlinear Classification and Regression***
 
-Heading 3
-======
+- Kernel methods
+- Ensemble methods (boosting and random forests)
+- Gaussian Processes for classification and regression
+
+***PART 2: Unsupervised Learning***
+
+- Introduction to graphical models
+- Latent variable models
+- Bayesian nonparametrics
+
+***PART 3: Advanced Topics***
+
+- Multi-task learning
+- Transfer learning

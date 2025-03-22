@@ -1,20 +1,35 @@
 ---
-title: "Teaching experience 2"
+title: "Statistical Signal Processing (2024)"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Undergraduate course"
+permalink: /teaching/2024-statistical-signal-processing
+venue: "University Carlos III of Madrid, Spain"
+date: 2024-01-01
+location: "Madrid, Spain"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+- Tutoring foreign students
 
-Heading 1
-======
+**Course Overview**
 
-Heading 2
-======
+***PART 1: Stochastic Processes***
 
-Heading 3
-======
+- Introduction and examples
+- First and second order statistics
+- Stationarity and ergodicity
+- Power spectral density
+
+***PART 2: Estimation Theory***
+
+- Parameter estimation
+- Bayesian estimation
+- Time series
+- Filtering, prediction and smoothing
+- Power spectral density estimation
+
+***PART 3: Detection Theory***
+
+- Introduction and examples
+- Performance metrics for detectors
+- Detector design
+- Sequential detection
