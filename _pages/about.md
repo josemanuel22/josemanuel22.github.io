@@ -7,7 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+I am a Ph.D. student in Bayesian Filtering and Deep Learning Methods with a theoretical statistical perspective at Carlos III University of Madrid. Previously, I was a Software Engineer working at Devo in the loxcope team and I also worked at the European Southern Observatory as a Data engineer and at CERN Openlab Program.
+My interests verse on Computational Statistics, Deep Learning, Geometric Measure Theory, Dynamical Systems, Scientific Computing and Software Engineering. My experience covers languages such as Julia, Python, Java, SQL, JavaScript ; and technologies such as Docker, ANTLR4, Kubernetes, Apache Spark, GIT or C.I. systems.
+In this blog you will find posts mainly on software topics, but also on science and personal-organization.
 
 A data-driven personal website
 ======
