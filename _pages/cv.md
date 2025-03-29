@@ -20,12 +20,12 @@ Education
 * **2020:** Master’s degree, University Autónoma of Madrid, Madrid, Spain
   * Stochastic processes and advanced statistics.
   * Numerical methods and advanced PDEs.
-  * [Master's thesis](/files/pdf/TFM2020_07_07jmdefrutos.pdf) on the mathematical foundations of image segmentation.
+  * [Master's thesis](/files/TFM2020_07_07jmdefrutos.pdf) on the mathematical foundations of image segmentation.
 * **2018:** Double Bachelor in Mathematics and Computer Science, University Autónoma of Madrid, Madrid, Spain
   * Foundations of mathematics and computer science.
   * PDEs, numerical methods, statistics, AI/ML, algorithm analysis.
   * C/C++, Java, Python.
-  * [Bachelor thesis](/files/pdf/TFG_MAT.pdf) on geometric measure theory.
+  * [Bachelor thesis](/files/TFG_MAT.pdf) on geometric measure theory.
 * **2016:** Internacional exchange program at École Polytechnique, Paris, France
   * Focused on Mathematics, Computer Science, and Economy.
 
