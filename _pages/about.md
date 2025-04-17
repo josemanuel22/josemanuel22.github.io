@@ -7,9 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. student in Bayesian Filtering and Deep Learning Methods with a theoretical statistical perspective at Carlos III University of Madrid. Previously, I was a Software Engineer working at Devo in the loxcope team and I also worked at the European Southern Observatory as a Data engineer and at CERN Openlab Program.
-My interests verse on Computational Statistics, Deep Learning, Geometric Measure Theory, Dynamical Systems, Scientific Computing and Software Engineering. My experience covers languages such as Julia, Python, Java, SQL, JavaScript ; and technologies such as Docker, ANTLR4, Kubernetes, Apache Spark, GIT or C.I. systems.
-In this blog you will find posts mainly on software topics, but also on science and personal-organization.
+I’m currently pursuing a PhD at Carlos III University of Madrid, where I investigate the probabilistic and theoretical foundations of AI and machine learning, with a particular emphasis on Bayesian inference and measure‑theoretic statistics. Before academia, I worked as a software engineer on the Loxcope team at Devo, and served as a data engineer at the European Southern Observatory, as well as participating in the CERN Openlab program. My interests span computational statistics, deep learning, geometric measure theory, dynamical systems, scientific computing, and software engineering. I’m proficient in Julia, Python, Java, SQL, and JavaScript, and have hands‑on experience with Docker, ANTLR4, Kubernetes, Apache Spark, Git, and CI/CD pipelines.
+
+
+## Research
+
+My work centers on the probabilistic and theoretical foundations of AI and machine learning, with a particular emphasis on Bayesian inference and measure‑theoretic statistics.  
+Currently, I am developing novel loss functions to enhance the training of deep neural networks. I am also expanding my research into rank statistics and their connections with optimal transport theory.
 
 ## News
 

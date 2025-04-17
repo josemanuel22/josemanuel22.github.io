@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-General Information
+General Information - [CV](/files/cv.pdf){: download="José_Manuel_de_Frutos_CV.pdf" }
 ======
 * **Full Name:** José Manuel de Frutos  
 * **Languages:** Spanish, French, English  
@@ -72,6 +72,28 @@ Talks
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
+
+Summer Schools & Others
+======
+
+- **EMS Summer School: Mathematical Modelling, Numerical Analysis, and Scientific Computing**  
+  *Kácov, Czech Republic*  
+  **Dates:** 15/06/2025–21/06/2025  
+  **Role:** Presented poster; received a full scholarship to attend the school
+
+- **Summer School on Bayesian Filtering**  
+  *Edinburgh, Scotland*  
+  **Dates:** 06/05/2024–10/05/2024
+
+- **Nordic Probabilistic Machine Learning (ProbIA) Summer School**  
+  *Copenhagen, Denmark*  
+  **Dates:** 01/06/2024–07/06/2024  
+  **Role:** Presented poster
+
+- **Hamburg School of Data Science 2020**  
+  *Hamburg, Germany*  
+  **Date:** 12/02/2020  
+  **Role:** Presented personal data science project
   
 Teaching
 ======
