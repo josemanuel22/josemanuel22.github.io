@@ -34,11 +34,11 @@ Work experience
 ======
 * **2023 - Present:** Ph.D. Student in Machine Learning and Bayesian Filtering  
   * **Institution:** University Carlos III of Madrid, Madrid, Spain  
-  * **Research Focus:** Deep Learning models applied to filtering methods  
+  * **Research Focus:** Generative modelling with sliced rank-statistics  
   * **Project:** Development of Bayesian filtering methods using Deep Learning  
-    * **Technologies:** ParticleFilter, Bayesian filtering, deep learning, generative models  
+    * **Technologies:** Rank statistics, two sample tests, f-divergences, deep learning, generative model  
+    * **Teaching:** Teacher of the course Machine Learning II at Carlos III University (100h), Course Instructor BBVA for Machine Learning (25h).
     * **Tools:** Python (pyTorch, Jax), Julia (Flux)  
-    * **Publications:** AIStats2024 (published), Pattern Recognition (submitted), NeurIPS (in preparation)
 
 * **2020 - 2023**: Full Stack Software Engineer at *Devo inc*
   * R&D Software Engineer. Interactive searches team for logs management.
@@ -75,6 +75,11 @@ Talks
 
 Summer Schools & Others
 ======
+
+- **MSML – Mathematical and Scientific Machine Learning Congress**  
+  *Naples, Italy*  
+  **Dates:** 03/08/2025–08/08/2025  
+  **Role:** Presented poster; received scholarship
 
 - **EMS Summer School: Mathematical Modelling, Numerical Analysis, and Scientific Computing**  
   *Kácov, Czech Republic*  

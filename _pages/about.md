@@ -17,8 +17,9 @@ Currently, I am developing novel loss functions to enhance the training of deep 
 
 ## News
 
-### [New article submitted to Pattern Recognition](https://arxiv.org/pdf/2410.22381)
-New article submitted to Pattern Recognition (November 2024)! [Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss. Jose Manuel de Frutos, Pablo M. Olmos, Manuel Alberto Vázquez, Joaquín Míguez](https://arxiv.org/pdf/2410.22381)
+### [New article](https://arxiv.org/pdf/2506.04700?)
+New article (July 2025)! [Explicit Density Approximation for Neural Implicit Samplers Using a Bernstein-Based Convex Divergence. Jose Manuel de Frutos, Pablo M. Olmos, Manuel Alberto Vázquez, Joaquín Míguez](https://arxiv.org/pdf/2506.04700?)
+
 
 ### [Paper accepted at AISTATS 2024](https://arxiv.org/pdf/2402.16435.pdf) 
 Paper accepted at AISTATS 2024 (January 2024)! [Training Implicit Generative Models via an Invariant Statistical Loss. Jose Manuel de Frutos, Pablo M. Olmos, Manuel Alberto Vázquez, Joaquín Míguez](https://arxiv.org/pdf/2402.16435.pdf)
