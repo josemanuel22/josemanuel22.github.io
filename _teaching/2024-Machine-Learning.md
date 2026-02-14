@@ -11,3 +11,4 @@ location: "Madrid, Spain"
  - Bachelor in Data Science (English)
  - Tutoring foreign students
  - [Lecture notes](https://josemanuel22.github.io/files/lecture_notes_MLII.pdf)
+ - Recognized for [teaching excellence](https://josemanuel22.github.io/files/Carta_Felicitacion_2025_1.pdf) 

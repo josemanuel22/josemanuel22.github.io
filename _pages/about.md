@@ -7,18 +7,19 @@ redirect_from:
   - /about.html
 ---
 
-I’m currently pursuing a PhD at Carlos III University of Madrid, where I investigate the probabilistic and theoretical foundations of AI and machine learning, with a particular emphasis on Bayesian inference and measure‑theoretic statistics. Before academia, I worked as a software engineer on the Loxcope team at Devo, and served as a data engineer at the European Southern Observatory, as well as participating in the CERN Openlab program. My interests span computational statistics, deep learning, geometric measure theory, dynamical systems, scientific computing, and software engineering. I’m proficient in Julia, Python, Java, SQL, and JavaScript, and have hands‑on experience with Docker, ANTLR4, Kubernetes, Apache Spark, Git, and CI/CD pipelines.
-
+PhD candidate at Carlos III University of Madrid (Bayesian inference, measure-theoretic ML). Former Devo (Loxcope) software engineer and ESO data engineer; CERN Openlab alumnus. Interests: computational statistics, deep learning, dynamical systems, scientific computing. Stack: Julia/Python, plus Java/SQL/JS; Docker, Kubernetes, Spark, Git, CI/CD.
 
 ## Research
 
-My work centers on the probabilistic and theoretical foundations of AI and machine learning, with a particular emphasis on Bayesian inference and measure‑theoretic statistics.  
-Currently, I am developing novel loss functions to enhance the training of deep neural networks. I am also expanding my research into rank statistics and their connections with optimal transport theory.
+I study the probabilistic and theoretical foundations of machine learning, especially Bayesian inference and measure-theoretic statistics. My current work develops new loss functions for deep learning, and extends to rank-based methods and sliced divergences with links to optimal transport.
 
 ## News
 
-### [New article](https://arxiv.org/pdf/2506.04700?)
-New article (July 2025)! [Explicit Density Approximation for Neural Implicit Samplers Using a Bernstein-Based Convex Divergence. Jose Manuel de Frutos, Pablo M. Olmos, Manuel Alberto Vázquez, Joaquín Míguez](https://arxiv.org/pdf/2506.04700?)
+### [New Paper](https://arxiv.org/abs/2601.22784)
+New Paper (January 2026)![Approximating f-Divergences with Rank Statistics. Joint work with Viktor Stein](https://arxiv.org/abs/2601.22784)
+
+### [Paper accepted at AISTATS 2026](https://arxiv.org/pdf/2506.04700?)
+Paper accepted at AISTATS 2026 (January 2026)![Explicit Density Approximation for Neural Implicit Samplers Using a Bernstein-Based Convex Divergence. Jose Manuel de Frutos, Pablo M. Olmos, Manuel Alberto Vázquez, Joaquín Míguez](https://arxiv.org/pdf/2506.04700?)
 
 
 ### [Paper accepted at AISTATS 2024](https://arxiv.org/pdf/2402.16435.pdf) 
