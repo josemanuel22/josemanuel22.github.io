@@ -16,10 +16,10 @@ I study the probabilistic and theoretical foundations of machine learning, espec
 ## News
 
 ### [New Paper](https://arxiv.org/abs/2601.22784)
-New Paper (January 2026)![Approximating f-Divergences with Rank Statistics. Joint work with Viktor Stein](https://arxiv.org/abs/2601.22784)
+New Paper (January 2026)! [Approximating f-Divergences with Rank Statistics. Joint work with Viktor Stein](https://arxiv.org/abs/2601.22784)
 
-### [Paper accepted at AISTATS 2026](https://arxiv.org/pdf/2506.04700?)
-Paper accepted at AISTATS 2026 (January 2026)![Explicit Density Approximation for Neural Implicit Samplers Using a Bernstein-Based Convex Divergence. Jose Manuel de Frutos, Pablo M. Olmos, Manuel Alberto Vázquez, Joaquín Míguez](https://arxiv.org/pdf/2506.04700?)
+### [Paper accepted at AISTATS 2026](https://arxiv.org/pdf/2506.04700?) 
+Paper accepted at AISTATS 2026 (January 2026)! [Explicit Density Approximation for Neural Implicit Samplers Using a Bernstein-Based Convex Divergence. Jose Manuel de Frutos, Pablo M. Olmos, Manuel Alberto Vázquez, Joaquín Míguez](https://arxiv.org/pdf/2506.04700?)
 
 
 ### [Paper accepted at AISTATS 2024](https://arxiv.org/pdf/2402.16435.pdf) 
