@@ -15,8 +15,8 @@ I study the probabilistic and theoretical foundations of machine learning, espec
 
 ## News
 
-### [New Paper](https://arxiv.org/pdf/2410.22381)
-Paper accepted in JMLR (March 2026)! [Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss](https://arxiv.org/pdf/2410.22381)
+### [Paper accepted in JMLR](https://arxiv.org/pdf/2410.22381)
+Paper accepted in the *Journal of Machine Learning Research* (March 2026)! [Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss](https://arxiv.org/pdf/2410.22381)
 
 ### [New Paper](https://arxiv.org/abs/2601.22784)
 New Paper (January 2026)! [Approximating f-Divergences with Rank Statistics. Joint work with Viktor Stein](https://arxiv.org/abs/2601.22784)
