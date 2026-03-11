@@ -3,8 +3,8 @@ title: "Explicit density approximation for neural implicit samplers using a Bern
 collection: publications
 category: conferences
 permalink: /publication/2025-06-05-bernstein-convex-divergence
-date: 2025-06-05
-venue: 'Published in 29th International Conference on Artificial Intelligence and Statistics (AISTATS), 2026'
+date: 2026-01-05
+venue: 'Published as a Spotlight paper at the 29th International Conference on Artificial Intelligence and Statistics (AISTATS)'
 paperurl: 'https://arxiv.org/pdf/2506.04700'
 #slidesurl: 'http://academicpages.github.io/files/slides_bernstein.pdf'
 #excerpt: 'We propose dual-ISL, a convex, likelihood-free objective for training implicit generative models, with a closed-form Bernstein polynomial density approximation and provable convergence guarantees.'
