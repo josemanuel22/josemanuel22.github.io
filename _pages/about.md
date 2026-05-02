@@ -15,11 +15,12 @@ I study the probabilistic and theoretical foundations of machine learning, espec
 
 ## News
 
+### [Paper accepted at ICML 2026](https://arxiv.org/abs/2601.22784)
+Our paper [Approximating f-Divergences with Rank Statistics](https://arxiv.org/abs/2601.22784), joint work with Viktor Stein, has been accepted at ICML 2026!
+
 ### [Paper accepted in JMLR](https://arxiv.org/pdf/2410.22381)
 Paper accepted in the *Journal of Machine Learning Research* (March 2026)! [Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss](https://arxiv.org/pdf/2410.22381)
 
-### [New Paper](https://arxiv.org/abs/2601.22784)
-New Paper (January 2026)! [Approximating f-Divergences with Rank Statistics. Joint work with Viktor Stein](https://arxiv.org/abs/2601.22784)
 
 ### [Paper accepted at AISTATS 2026](https://arxiv.org/pdf/2506.04700?) 
 Accepted at AISTATS 2026 as a Spotlight presentation (January 2026)! [Explicit Density Approximation for Neural Implicit Samplers Using a Bernstein-Based Convex Divergence. Jose Manuel de Frutos, Pablo M. Olmos, Manuel Alberto Vázquez, Joaquín Míguez](https://arxiv.org/pdf/2506.04700?)
