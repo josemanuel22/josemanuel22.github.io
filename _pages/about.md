@@ -7,11 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-PhD candidate at Carlos III University of Madrid (Bayesian inference, measure-theoretic ML). Former Devo (Loxcope) software engineer and ESO data engineer; CERN Openlab alumnus. Interests: computational statistics, deep learning, dynamical systems, scientific computing. Stack: Julia/Python, plus Java/SQL/JS; Docker, Kubernetes, Spark, Git, CI/CD.
+PhD candidate at Carlos III University of Madrid working in statistical machine learning. My research focuses on implicit generative models and statistical methods for comparing probability distributions, including rank statistics, f-divergences, divergence estimation, distribution comparison, and density estimation. Former Devo (Loxcope) software engineer and ESO data engineer; CERN Openlab alumnus. Interests also include computational statistics, deep learning, dynamical systems, and scientific computing. Stack: Julia/Python, plus Java/SQL/JS; Docker, Kubernetes, Spark, Git, CI/CD.
 
 ## Research
 
-I study the probabilistic and theoretical foundations of machine learning, especially Bayesian inference and measure-theoretic statistics. My current work develops new loss functions for deep learning, and extends to rank-based methods and sliced divergences with links to optimal transport.
+I study statistical machine learning, with a particular emphasis on implicit generative models and principled distribution comparison. My work develops rank-statistic methods for approximating f-divergences and divergence estimation, robust training methods for generative models, and density estimation and density approximation techniques for neural implicit samplers. I am also interested in sliced divergences, high-dimensional distribution comparison, and their connections to optimal transport.
 
 ## News
 
