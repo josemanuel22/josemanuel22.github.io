@@ -24,13 +24,13 @@ This post gives a high-level view of how these ideas fit together and how they r
 
 ## GANs, implicit generative models, and the training problem
 
-Suppose a generator transforms a latent random variable \(Z\) into a sample
+Suppose a generator transforms a latent random variable $$Z$$ into a sample
 
 $$
 X = G_\theta(Z).
 $$
 
-The model distribution is therefore available through simulation: draw \(Z\), pass it through \(G_\theta\), and obtain samples from the generated distribution. What may be unavailable is a closed-form density for \(X\).
+The model distribution is therefore available through simulation: draw $$Z$$, pass it through $$G_\theta$$, and obtain samples from the generated distribution. What may be unavailable is a closed-form density for $$X$$.
 
 GANs solve this problem by introducing another neural network, the discriminator, and learning through an adversarial objective. In broad terms, the discriminator estimates how real and generated data differ, while the generator tries to eliminate that difference.
 
@@ -67,7 +67,7 @@ The objective is therefore relevant to researchers looking for **discriminator-f
 
 ## From one dimension to high dimensions and heavy tails
 
-A natural limitation of rank statistics is that ordering is straightforward in one dimension but not in \(\mathbb{R}^d\). Our later work develops two extensions that address broader generative settings:
+A natural limitation of rank statistics is that ordering is straightforward in one dimension but not in $$\mathbb{R}^d$$. Our later work develops two extensions that address broader generative settings:
 
 **Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss**  
 JMLR 2026 · [paper page](/publication/2026-03-10-jmlr) · [JMLR](https://jmlr.org/papers/v27/25-1660.html) · [code](https://github.com/josemanuel22/isl-implicit-generative-models)
@@ -108,7 +108,7 @@ ICML 2026 · [paper page](/publication/2026-01-25-rank_f-div) · [arXiv](https:/
 
 we show that rank histograms can be used to construct a family of approximations to *f*-divergences directly from samples, without explicit density-ratio estimation.
 
-For a resolution parameter \(K\), the discrepancy between two distributions induces a rank histogram. Applying a discrete *f*-divergence to that histogram yields a rank-statistic divergence. As \(K\) increases, this provides increasingly fine information about the difference between the underlying distributions.
+For a resolution parameter $$K$$, the discrepancy between two distributions induces a rank histogram. Applying a discrete *f*-divergence to that histogram yields a rank-statistic divergence. As $$K$$ increases, this provides increasingly fine information about the difference between the underlying distributions.
 
 This matters for generative modeling because *f*-divergences are central to many statistical learning objectives, including **f-GAN-style formulations**. The rank-statistic construction provides a different route to estimating these discrepancies: rather than training a variational critic or estimating the density ratio directly, we work with sample ranks.
 
