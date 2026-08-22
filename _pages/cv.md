@@ -38,7 +38,7 @@ Work experience
   * **Research Focus:** Generative modelling with sliced rank-statistics  
   * **Project:** Development of Bayesian filtering methods using Deep Learning  
     * **Technologies:** Rank statistics, two sample tests, f-divergences, deep learning, generative model  
-    * **Teaching:** Teacher of the course Machine Learning II at Carlos III University (100h), Course Instructor BBVA for Machine Learning (25h).
+    * **Teaching:** Teacher of the course Machine Learning II at Carlos III University (100h), Course Instructor BBVA for Machine Learning (75h).
     * **Tools:** Python (pyTorch, Jax), Julia (Flux)  
 
 * **2020 - 2023**: Full Stack Software Engineer at *Devo inc*
