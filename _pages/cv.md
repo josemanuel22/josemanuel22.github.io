@@ -28,7 +28,7 @@ Education
   * C/C++, Java, Python.
   * [Bachelor thesis](/files/TFG_MAT.pdf) on geometric measure theory.
 * **2016:** Internacional exchange program at École Polytechnique, Paris, France
-  * Focused on Mathematics, Computer Science, and Economy.
+  * Focused on Mathematics, Computer Science, and Economics.
 
 
 Work experience
