@@ -15,6 +15,7 @@ authors:
 paperurl: 'https://www.jmlr.org/papers/volume27/25-1660/25-1660.pdf'
 arxiv: '2410.22381'
 codeurl: 'https://github.com/josemanuel22/isl-implicit-generative-models'
+bibtex: true
 keywords:
   - invariant statistical loss
   - implicit generative models
@@ -57,3 +58,17 @@ invariant statistical loss · implicit generative models · generative adversari
 ## Abstract
 
 The canonical abstract and bibliographic record are available on the [JMLR paper page](https://jmlr.org/papers/v27/25-1660.html).
+
+## BibTeX
+
+```bibtex
+@article{defrutos2026robust,
+  title={Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss},
+  author={de Frutos, Jos\'e Manuel and V\'azquez, Manuel A. and Olmos, Pablo M. and M\'iguez, Joaqu\'in},
+  journal={Journal of Machine Learning Research},
+  volume={27},
+  number={122},
+  pages={1--49},
+  year={2026}
+}
+```
