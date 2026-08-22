@@ -66,6 +66,9 @@ Research Stays
 * **May–July 2026:** Research stay at **Inria Grenoble Rhône-Alpes / Laboratoire Jean Kuntzmann (LJK)**, Grenoble, France  
   * AIRSEA team, hosted by Clémentine Prieur and Olivier Zahm.  
   * Research on sliced and max-sliced Sobol indices, rank-based sensitivity analysis, and single-sample estimators.
+* **October 2026:** Planned research stay at **Inria Grenoble Rhône-Alpes / Laboratoire Jean Kuntzmann (LJK)**, Grenoble, France  
+  * AIRSEA team, hosted by Clémentine Prieur and Olivier Zahm.  
+  * Continuation of the joint research on sliced and max-sliced Sobol indices and rank-based sensitivity analysis.
   
 Publications
 ======
