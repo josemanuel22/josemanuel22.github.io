@@ -104,7 +104,7 @@
 {% if site.og_image %}
   <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
       "@type": "Organization",
       "url": {{ seo_url | jsonify }},
       "logo": {{ site.og_image | prepend: "/images/" | prepend: base_path | jsonify }}
@@ -115,11 +115,40 @@
 {% if site.social %}
   <script type="application/ld+json">
     {
-      "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "{{ seo_url }}/#person",
+      "name": "José Manuel de Frutos Porras",
+      "alternateName": "José Manuel de Frutos",
+      "url": {{ seo_url | jsonify }},
+      "image": "{{ seo_url }}/images/profile.png",
+      "jobTitle": "PhD Candidate in Machine Learning",
+      "description": {{ site.description | jsonify }},
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad Carlos III de Madrid",
+        "url": "https://www.uc3m.es/"
+      },
+      "knowsAbout": [
+        "Statistical machine learning",
+        "Implicit generative models",
+        "Rank statistics",
+        "f-divergences",
+        "Divergence estimation",
+        "Distribution comparison",
+        "Density estimation",
+        "Sliced divergences",
+        "Optimal transport"
+      ],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=3oACfEgAAAAJ&hl=en",
+        "https://orcid.org/0009-0002-5251-0515",
+        "https://github.com/josemanuel22",
+        "https://www.linkedin.com/in/jose-manuel-de-frutos-porras",
+        "https://dblp.org/pid/371/4109.html",
+        "https://gts.tsc.uc3m.es/group-members/graduate-students/",
+        "https://www.researchgate.net/profile/Jose-Manuel-De-Frutos-2"
+      ]
     }
   </script>
 {% endif %}
