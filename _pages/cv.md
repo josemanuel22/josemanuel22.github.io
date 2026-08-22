@@ -13,6 +13,7 @@ General Information - [CV](/files/cv.pdf){: download="José_Manuel_de_Frutos_CV.
 ======
 * **Full Name:** José Manuel de Frutos  
 * **Languages:** Spanish, French, English  
+* **Technical stack:** Julia, Python, Java, SQL, JavaScript; Docker, Kubernetes, Spark, Git, CI/CD  
 
 Education
 ======
