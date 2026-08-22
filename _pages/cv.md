@@ -60,6 +60,12 @@ Work experience
   * Performed data ingestion, extraction, and load (ETL) boosted by 1000x (Python3, Bash).
   * Data visualization using Matplotlib, Bokeh, Plotly.
   * Provided advice on new hardware acquisition with a budget of 40K Euros.
+
+Research Stays
+======
+* **May–July 2026:** Research stay at **Inria Grenoble Rhône-Alpes / Laboratoire Jean Kuntzmann (LJK)**, Grenoble, France  
+  * AIRSEA team, hosted by Clémentine Prieur and Olivier Zahm.  
+  * Research on sliced and max-sliced Sobol indices, rank-based sensitivity analysis, and single-sample estimators.
   
 Publications
 ======
