@@ -26,9 +26,9 @@ This post gives a high-level view of how these ideas fit together and how they r
 
 Suppose a generator transforms a latent random variable \(Z\) into a sample
 
-\[
+$$
 X = G_\theta(Z).
-\]
+$$
 
 The model distribution is therefore available through simulation: draw \(Z\), pass it through \(G_\theta\), and obtain samples from the generated distribution. What may be unavailable is a closed-form density for \(X\).
 
@@ -53,15 +53,15 @@ The important distinction from a GAN is that **there is no learned discriminator
 
 Conceptually, this replaces
 
-\[
+$$
 \text{generator} \leftrightarrow \text{discriminator}
-\]
+$$
 
 with something closer to
 
-\[
+$$
 \text{generator} \rightarrow \text{rank-based statistical discrepancy}.
-\]
+$$
 
 The objective is therefore relevant to researchers looking for **discriminator-free alternatives to GAN training**, sample-based generative objectives, or non-adversarial methods for implicit generative models.
 
