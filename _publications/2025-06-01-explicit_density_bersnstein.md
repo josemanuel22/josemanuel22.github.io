@@ -16,6 +16,7 @@ paperurl: 'https://arxiv.org/pdf/2506.04700'
 arxiv: '2506.04700'
 openreview: 'https://openreview.net/forum?id=CyQG7D7FwT'
 codeurl: 'https://github.com/josemanuel22/dual-isl'
+bibtex: true
 keywords:
   - dual-ISL
   - explicit density approximation
@@ -60,3 +61,15 @@ dual-ISL · neural implicit samplers · implicit generative models · generative
 ## Abstract
 
 The canonical abstract and conference record are available on [OpenReview](https://openreview.net/forum?id=CyQG7D7FwT) and the [AISTATS Spotlight page](https://virtual.aistats.org/virtual/2026/spotlight/13918).
+
+## BibTeX
+
+```bibtex
+@inproceedings{defrutos2026explicit,
+  title={Explicit Density Approximation for Neural Implicit Samplers Using a Bernstein-Based Convex Divergence},
+  author={de Frutos, Jos\'e Manuel and Olmos, Pablo M. and V\'azquez, Manuel A. and M\'iguez, Joaqu\'in},
+  booktitle={Proceedings of the 29th International Conference on Artificial Intelligence and Statistics},
+  year={2026},
+  note={Spotlight}
+}
+```
