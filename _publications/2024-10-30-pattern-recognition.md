@@ -3,7 +3,7 @@ title: "Robust training of implicit generative models for multivariate and heavy
 collection: publications
 category: manuscripts
 permalink: /publication/2026-03-10-jmlr
-excerpt: 'A sample-based generative modeling framework that characterizes ISL as a proper divergence and extends it to heavy-tailed data with Pareto-ISL and high-dimensional data with random-projection ISL-slicing.'
+excerpt: 'A stable, discriminator-free alternative to adversarial GAN training for implicit generative models, extended to multivariate and heavy-tailed distributions with Pareto-ISL and ISL-slicing.'
 date: 2026-03-10
 publication_year: 2026
 venue: 'Journal of Machine Learning Research, 27(122):1–49'
@@ -18,11 +18,18 @@ codeurl: 'https://github.com/josemanuel22/isl-implicit-generative-models'
 keywords:
   - invariant statistical loss
   - implicit generative models
+  - generative adversarial networks
+  - GANs
+  - GAN training
+  - adversarial training
+  - GAN alternatives
+  - discriminator-free generative modeling
+  - mode collapse
+  - training stability
   - heavy-tailed distributions
   - Pareto-ISL
   - sliced divergences
   - random projections
-  - mode collapse
   - generative modeling
 citation: 'José Manuel de Frutos, Manuel A. Vázquez, Pablo M. Olmos, and Joaquín Míguez. (2026). &quot;Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss.&quot; <i>Journal of Machine Learning Research</i>, 27(122):1–49.'
 ---
@@ -37,9 +44,15 @@ This work develops the theory and practical scope of the **Invariant Statistical
 
 We then introduce two extensions. **Pareto-ISL** uses generalized Pareto latent noise to improve modeling of heavy-tailed and extreme events. **ISL-slicing** uses random one-dimensional projections to scale the rank-based loss to multivariate and high-dimensional distributions. The resulting objective can be used as a standalone training criterion or as a pretraining objective before adversarial fine-tuning.
 
+## Relation to GANs, mode collapse, and training stability
+
+**Generative adversarial networks (GANs)** are implicit generative models typically trained through an adversarial discriminator–generator game. This paper studies a different route: ISL trains the generator through a sample-based statistical objective and therefore does **not require a discriminator or adversarial min-max optimization**.
+
+This connection is especially relevant for researchers searching for **stable GAN training**, **alternatives to GAN losses**, or methods to reduce **mode collapse / mode dropping**. ISL can be used as a fully non-adversarial training criterion, or as a stable pretraining objective before later adversarial fine-tuning. The multivariate and heavy-tailed extensions make the framework applicable beyond the low-dimensional settings in which discriminator-free objectives are often studied.
+
 ## Topics
 
-invariant statistical loss · implicit generative models · heavy tails · Pareto-ISL · sliced divergences · random projections · mode collapse · generative modeling
+invariant statistical loss · implicit generative models · generative adversarial networks (GANs) · GAN training · adversarial training · GAN alternatives · discriminator-free generative modeling · mode collapse · training stability · heavy tails · Pareto-ISL · sliced divergences · random projections · generative modeling
 
 ## Abstract
 
