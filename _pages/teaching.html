@@ -7,8 +7,31 @@ author_profile: true
 
 {% include base_path %}
 
+<p>
+My teaching experience spans university-level machine learning, statistics and mathematics,
+as well as professional training in machine learning. I have taught in both English and Spanish,
+and have experience with classroom teaching, tutoring and student supervision.
+</p>
+
+<h2>University teaching</h2>
 {% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+  {% if post.type == "Undergraduate course" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
+
+<h2>Professional training</h2>
+{% for post in site.teaching reversed %}
+  {% if post.type == "Corporate training" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
+
+<h2>Student supervision</h2>
+{% for post in site.teaching reversed %}
+  {% if post.type == "Student supervision" %}
+    {% include archive-single.html %}
+  {% endif %}
 {% endfor %}
 
 <h2>Basketball coaching</h2>
