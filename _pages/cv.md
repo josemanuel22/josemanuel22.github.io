@@ -17,7 +17,7 @@ General Information - [CV](/files/cv.pdf){: download="José_Manuel_de_Frutos_CV.
 
 Education
 ======
-* **2023-2027(expected):** Ph.D. in Pure and Applied Mathematics, University Carlos III de Madrid, Spain. Leveraged rank statistics to develop novel loss functions for generative machine learning models.
+* **2023–2026 (expected):** Ph.D. in Pure and Applied Mathematics, University Carlos III de Madrid, Spain. Leveraged rank statistics to develop novel loss functions for generative machine learning models.
 * **2020:** Master’s degree, University Autónoma of Madrid, Madrid, Spain
   * Stochastic processes and advanced statistics.
   * Numerical methods and advanced PDEs.
@@ -33,13 +33,13 @@ Education
 
 Work experience
 ======
-* **2023 - Present:** Ph.D. Student in Machine Learning and Bayesian Filtering  
+* **2023 - Present:** Ph.D. Researcher in Statistical Machine Learning  
   * **Institution:** University Carlos III of Madrid, Madrid, Spain  
-  * **Research Focus:** Generative modelling with sliced rank-statistics  
-  * **Project:** Development of Bayesian filtering methods using Deep Learning  
-    * **Technologies:** Rank statistics, two sample tests, f-divergences, deep learning, generative model  
+  * **Research Focus:** Implicit generative models, rank-based methods, divergence estimation, and distribution comparison  
+  * **Research:** Development of rank-statistic methods for generative modelling, f-divergence approximation, and density estimation  
+    * **Technologies:** Rank statistics, two-sample tests, f-divergences, deep learning, generative models  
     * **Teaching:** Teacher of the course Machine Learning II at Carlos III University (100h), Course Instructor BBVA for Machine Learning (75h).
-    * **Tools:** Python (pyTorch, Jax), Julia (Flux)  
+    * **Tools:** Python (PyTorch, JAX), Julia (Flux)  
 
 * **2020 - 2023**: Full Stack Software Engineer at *Devo inc*
   * R&D Software Engineer. Interactive searches team for logs management.
