@@ -1,0 +1,59 @@
+{% if page.collection == "publications" %}
+  <!-- Academic metadata for Google Scholar and other scholarly indexers -->
+  <meta name="citation_title" content="{{ page.title | markdownify | strip_html | strip_newlines | escape }}">
+
+  {% if page.authors %}
+    {% for author in page.authors %}
+  <meta name="citation_author" content="{{ author | escape }}">
+    {% endfor %}
+  {% elsif page.first_author %}
+  <meta name="citation_author" content="{{ page.first_author | escape }}">
+  {% endif %}
+
+  {% if page.publication_year %}
+  <meta name="citation_publication_date" content="{{ page.publication_year }}">
+  {% elsif page.date %}
+  <meta name="citation_publication_date" content="{{ page.date | date: '%Y/%m/%d' }}">
+  {% endif %}
+
+  {% if page.venue %}
+    {% if page.category == "conferences" %}
+  <meta name="citation_conference_title" content="{{ page.venue | strip_html | escape }}">
+    {% elsif page.category == "manuscripts" %}
+  <meta name="citation_journal_title" content="{{ page.venue | strip_html | escape }}">
+    {% endif %}
+  {% endif %}
+
+  {% if page.paperurl %}
+  <meta name="citation_pdf_url" content="{{ page.paperurl }}">
+  {% endif %}
+  {% if page.doi %}
+  <meta name="citation_doi" content="{{ page.doi }}">
+  {% endif %}
+  {% if page.arxiv %}
+  <meta name="citation_arxiv_id" content="{{ page.arxiv }}">
+  {% endif %}
+
+  <!-- Schema.org representation for general search engines and LLM retrieval -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": {{ page.title | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    {% if page.abstract %}"description": {{ page.abstract | strip_newlines | jsonify }},{% elsif page.excerpt %}"description": {{ page.excerpt | strip_html | strip_newlines | jsonify }},{% endif %}
+    {% if page.publication_year %}"datePublished": {{ page.publication_year | append: "" | jsonify }},{% elsif page.date %}"datePublished": {{ page.date | date_to_xmlschema | jsonify }},{% endif %}
+    {% if page.authors %}
+    "author": [
+      {% for author in page.authors %}
+      {"@type": "Person", "name": {{ author | jsonify }}}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    {% endif %}
+    {% if page.keywords %}"keywords": {{ page.keywords | join: ", " | jsonify }},{% endif %}
+    {% if page.doi %}"identifier": {{ page.doi | prepend: "https://doi.org/" | jsonify }},{% elsif page.arxiv %}"identifier": {{ page.arxiv | prepend: "arXiv:" | jsonify }},{% endif %}
+    {% if page.paperurl %}"encoding": {"@type": "MediaObject", "contentUrl": {{ page.paperurl | jsonify }}, "encodingFormat": "application/pdf"},{% endif %}
+    "mainEntityOfPage": {"@type": "WebPage", "@id": {{ page.url | absolute_url | jsonify }}}
+  }
+  </script>
+{% endif %}
