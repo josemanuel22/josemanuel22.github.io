@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-**José Manuel de Frutos — PhD researcher in Machine Learning at Universidad Carlos III de Madrid.** I work on statistical machine learning, implicit generative models, rank-based methods, and divergence estimation. My research also covers distribution comparison, f-divergences, and density estimation. Former Devo (Loxcope) software engineer and ESO data engineer; CERN Openlab alumnus.
+**José Manuel de Frutos — PhD researcher in Machine Learning at Universidad Carlos III de Madrid.** I work on statistical machine learning, implicit generative models, rank-based methods, and divergence estimation. My research also covers distribution comparison, f-divergences, and density estimation. Former Devo (Loxcope) software engineer and ESO data engineer; CERN Openlab alumnus. Open-source contributor to Julia, FluxML, JuliaStats, and JuliaPOMDP.
 
 ## Research
 
