@@ -18,8 +18,8 @@ I study statistical machine learning, with a particular emphasis on implicit gen
 ### [Paper accepted at ICML 2026](https://arxiv.org/abs/2601.22784)
 Our paper [Approximating f-Divergences with Rank Statistics](https://arxiv.org/abs/2601.22784), joint work with Viktor Stein, has been accepted at ICML 2026!
 
-### [Paper accepted in JMLR](https://arxiv.org/pdf/2410.22381)
-Paper accepted in the *Journal of Machine Learning Research* (March 2026)! [Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss](https://arxiv.org/pdf/2410.22381)
+### [Paper accepted in JMLR](https://www.jmlr.org/papers/volume27/25-1660/25-1660.pdf)
+Paper accepted in the *Journal of Machine Learning Research* (March 2026)! [Robust training of implicit generative models for multivariate and heavy-tailed distributions with an invariant statistical loss](https://www.jmlr.org/papers/volume27/25-1660/25-1660.pdf)
 
 
 ### [Paper accepted at AISTATS 2026](https://arxiv.org/pdf/2506.04700?) 
