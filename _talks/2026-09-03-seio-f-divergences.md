@@ -1,13 +1,15 @@
 ---
-title: "Approximating f-Divergences with Rank Statistics"
+title: "SEIO 2026 — Nonparametric Statistics Session"
 collection: talks
 type: "Talk"
 permalink: /talks/2026-09-03-seio-f-divergences
 venue: "XLII Congreso Nacional de Estadística, Investigación Operativa y Ciencia de Datos (SEIO 2026) — Estadística No Paramétrica"
 date: 2026-09-03
 location: "Santiago de Compostela, Spain"
-excerpt: "Conference presentation at SEIO 2026 on sample-based approximation of f-divergences using rank statistics, with density-ratio-free estimation and applications to statistical learning and generative modeling."
+excerpt: "Conference presentation at SEIO 2026 on rank-based methods for comparing distributions from samples and applications to generative modeling."
 ---
+
+**Talk:** *Approximating f-Divergences with Rank Statistics*.
 
 Conference presentation at **SEIO 2026** in the **Estadística No Paramétrica** session. The talk presents a rank-statistic approach to approximating **f-divergences directly from samples**, avoiding explicit density-ratio estimation, together with extensions and applications to statistical comparison and generative modeling.
 
